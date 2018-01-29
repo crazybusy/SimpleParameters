@@ -15,7 +15,7 @@ Anything with a type must have additional parameter following it
     
 class SimpleParameters():
 
-    OPTIONS_FILE = 'SimpleParameters.txt'
+    OPTIONS_FILE = 'simple_parameters.json'
     VERSION = "Your version goes here. Specify it in the options file"
     DESCRIPTION= "A small description of the application goes here. Specify it in the options file"    
 

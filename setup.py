@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
     name = 'SimpleParameters',
-    packages = ['src'],
+    packages = ['simple_parameters'],
     version = '1.1',
     description = 'Simple parsing of parameters supplied on the command lin',
     author='Saurabh Gupta',
