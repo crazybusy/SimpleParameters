@@ -37,8 +37,13 @@ class SimpleParameters():
                 #Create an option parser
                 self.parser = OptionParser(version = version, description = description)                        
                 #Parse through each of the options one by one
-                for key, option in self.all_options.items():
-                    self.parse_each_option(option)
+                if isinstance(self.all_options, dict):
+                    for key, option in self.all_options.items():
+                        self.parse_each_option(option)
+                elif isinstance(self.all_options, list):
+                    for option in self.all_options:
+                        self.parse_each_option(option)                   
+                            
         else:
             raise Exception("Options file {} not found.".format(options_file))
 
@@ -49,14 +54,22 @@ class SimpleParameters():
 
     #If the type of the variable is not specified, it is a flag
         if not(option.get('type')):
-            #Store the variable as true or false
+            
+    #Store the data into the varible, same as store
             action = "store_true"
-            if default == 'true':
-                default=True
-            else:
-                default=False
+            
+            #Deduce the default value of the variable
+            if not(isinstance(default, bool)):
+                if default == 'true' or default == 'True'\
+                   or default == 'Yes' or default == 'yes':
+                   default=True
+                elif default == 'false' or default == 'False'\
+                   or default == 'no' or default == 'No':
+                    default=False
+                else:
+                   default = false
 
-            #Consider the cases of various pptional parameters not being specified   
+            #Consider the cases of various optional parameters not being specified   
             if long and default and help:
                 self.parser.add_option(option['short'], long
                       ,dest=self.get_var_name(option)
