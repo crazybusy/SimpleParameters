@@ -1,6 +1,6 @@
-Simple parsing of parameters supplied on the command line
+Simple parsing of arguments/parameters supplied on the command line
 
-Allows to create json file with details of the parameters available on the command line for any application. It then handles the user parsing of these parameters by setting the required flags which you can directly consume in your application
+Allows to create json file with details of the arguments/parameters available on the command line for any application. It then handles the user parsing of these parameters by setting the required flags which you can directly consume in your application
 
 Get started by creating an object of SimpleParameters by creating its object
 
@@ -18,3 +18,8 @@ Enable option groups simply by creating a named sublist of options. Should be si
 group = OptionGroup(parser, "Debug Options")
 	Subsequently options specified in this dictionary(named 	list) should be added into this group
 Subclass OptionParser and somehow allow arguments not matching those on file to be considered positional arguments instead of showing errors
+
+
+Installation
+Clone the repo and run setup.py to install. 
+
