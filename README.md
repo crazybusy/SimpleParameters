@@ -12,6 +12,3 @@ Now the command line swtiches specifed in the json file are available in the opt
 
 There are some new features in the Projects tab TODO's if anyone is interested in picking these up.
 
-Installation
-Clone the repo and run setup.py to install. 
-
