@@ -3,7 +3,7 @@ setup(
     name = 'SimpleParameters',
     packages = ['simple_parameters'],
     version = '1.1',
-    description = 'Simple parsing of parameters supplied on the command lin',
+    description = 'Simple parsing of parameters supplied on the command line',
     author='Saurabh Gupta',
     author_email = 'upscprep48@gmail.com',
     url = 'https://github.com/crazybusy/SimpleParameters',
