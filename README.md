@@ -6,7 +6,7 @@ Helps skip the step of having to manually parse for parameters in every applicat
 
 Get started by creating an object of SimpleParameters by creating its object
 
-params = SimpleParameters('path to configuration files')
+params = simpleparser.SimpleParameters('path to configuration files')
 options, args = params.resolve_parameters(sys.argv)
 
 Now the command line swtiches specifed in the json file are available in the options list and the positional parameters are available as args. It also generates a help file to describe the parameters available for your application. Try using -h option

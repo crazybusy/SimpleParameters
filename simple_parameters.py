@@ -13,13 +13,13 @@ Anything with a type must have additional parameter following it
 
 '''
     
-class SimpleParameters():
+class SimpleParser():
 
     OPTIONS_FILE = 'simple_parameters.json'
     VERSION = "Your version goes here. Specify it in the options file"
     DESCRIPTION= "A small description of the application goes here. Specify it in the options file"    
 
-    def __init__(self, options_file =OPTIONS_FILE,
+    def __init__(self, options_file = OPTIONS_FILE,
                           version = VERSION, 
                           description = DESCRIPTION):        
 
@@ -35,7 +35,8 @@ class SimpleParameters():
                 self.all_options = self.all_options.get("parameters")
                 
                 #Create an option parser
-                self.parser = OptionParser(version = version, description = description)                        
+                self.parser = OptionParser(version = version, description = description)
+                
                 #Parse through each of the options one by one
                 if isinstance(self.all_options, dict):
                     for key, option in self.all_options.items():
@@ -167,12 +168,12 @@ if __name__=="__main__":
 #Execute the parse after all the options have been added
         import sys
         try:
-            parser = SimpleParameters()
+            parser = SimpleParser()
             (options, args) =\
                 parser.resolve_parameters(sys.argv)            
 
             if(options.file):
-                parser = SimpleParameters(options.file)
+                parser = SimpleParser(options.file)
                 (options, args) =\
                     parser.resolve_parameters(args)
                 parser.parser.print_help()
